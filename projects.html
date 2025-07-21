@@ -97,8 +97,8 @@
             </ul>
           </li>
         </ul>
-        <a href="system.png" target="_blank">
-          <img src="system.png" alt="System Diagram" class="system-image">
+        <a href="system.PNG" target="_blank">
+          <img src="system.PNG" alt="System Diagram" class="system-image">
         </a>
 
         <h3>Installation</h3>
@@ -191,17 +191,51 @@
         </p>
       </li>
       <li id="cpp">
-        <b>C++ - BIL 142</b>
-        <p>
-          Various programming assignments and projects completed using C++ as part of the BIL 142 course.
-        </p>
-      </li>
-      <li id="matlab">
-        <b>Audio and Video Processing With MATLAB – ELE 371</b>
-        <p>
-          Projects involving audio and video signal processing using MATLAB, including filtering, analysis, and visualization.
-        </p>
-      </li>
+  <b>C++ - BIL 142</b>
+  <h3>Project Description</h3>
+  <p>
+    Imagine you are a ship captain embarking on a journey in a universe governed by probabilities. You are both the captain and the designer of this universe. The following criteria, listed from most to least important, will determine your project score:
+  </p>
+  <ul>
+    <li>Your code must compile and run successfully. If you use CMake, your CMakeLists.txt should work; if you use gcc, provide the exact command in a README file.</li>
+    <li>The required business logic must be implemented correctly.</li>
+    <li>Write clean code: avoid magic numbers, use const correctness, and ensure proper naming for variables, classes, and functions.</li>
+    <li>Utilize as many topics covered in class as possible.</li>
+    <li>There should be no memory leaks or undefined behavior.</li>
+    <li>Your design should be as flexible as possible. For example, if the number of events increases or new ships are added, the structure should allow for easy extension without deleting existing code.</li>
+  </ul>
+  <h4>Game Flow</h4>
+  <ul>
+    <li>At the start, the player (captain) selects one ship. Each ship has three attributes: Fuel, Health, and Money. The game starts with Money: 0, Fuel: 100, Health: 100.</li>
+    <li>Each ship type has unique features:
+      <ul>
+        <li><b>Fast Ship:</b> 1.5x higher escape chance than the normal ship, but takes 1.5x more damage.</li>
+        <li><b>Strong Ship:</b> 0.5x damage taken compared to the normal ship, but escape chance is half that of the normal ship.</li>
+        <li><b>Normal Ship:</b> Balanced escape chance and damage.</li>
+      </ul>
+    </li>
+    <li>There are 3 different events, each called randomly 5 times:
+      <ul>
+        <li><b>Asteroid Belt:</b> For 3 rounds, the ship may or may not take 10 damage depending on its type.</li>
+        <li><b>Abandoned Planet:</b> 50% chance to gain 10 gold or encounter Space Pirates.</li>
+        <li><b>Space Pirates:</b> The captain chooses to Escape, Fight, or Negotiate.
+          <ul>
+            <li>If Escape is chosen, the chance of success depends on the ship type. If unsuccessful, the same options are presented again. Escaping costs 33 fuel. If there isn't enough fuel, escape is not possible.</li>
+            <li>If Fight is chosen, there is a 50% chance to win or lose. Losing results in 30 damage for a normal ship.</li>
+            <li>If Negotiate is chosen, pirates demand a random fee of 10, 20, or 30 gold.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>After each event, check if fuel is zero. If so, the game ends.</li>
+    <li>At the end of the game (when fuel is zero or after 5 events), the final score is calculated as follows:<br>
+      <code>Score = (Fuel) x 5 + (Ship Health) x 10 + (Money) x 10</code>
+    </li>
+  </ul>
+  <p>
+    All numbers and operations should be handled cleanly, and the game should be easily extendable for new events or ship types.
+  </p>
+</li>
       <li id="butterworth">
         <b>Fourth Level Butterworth Filter Design – ELE 202</b>
         <p>
