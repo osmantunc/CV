@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Osman Tunç - Personal Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="contact.html">Contact</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+  <div class="container">
+    <h1>OSMAN TUNÇ</h1>
+    <div class="top-contact">
+      <a href="mailto:osman.tunc.ee@gmail.com" title="E-mail">
+        <img src="https://img.icons8.com/ios-filled/24/0077cc/new-post.png" alt="E-mail" style="vertical-align:middle; margin-right:6px;">E-mail
+      </a>
+      <a href="https://github.com/osmantunc" target="_blank" rel="noopener noreferrer" title="GitHub">
+        <img src="https://img.icons8.com/ios-glyphs/24/0077cc/github.png" alt="GitHub" style="vertical-align:middle; margin-right:6px;">GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/osman-tunc/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+        <img src="https://img.icons8.com/ios-filled/24/0077cc/linkedin.png" alt="LinkedIn" style="vertical-align:middle; margin-right:6px;">LinkedIn
+      </a>
+    </div>
+    <div class="about">
+      <p>
+        I'm Osman Tunç, a senior Electrical and Electronics Engineering student at TOBB ETÜ. My internship at Fotoniks A.Ş. involved system engineering tasks, while my internships at PulseTRonics focused on electronic warfare and radar systems. In my academic life, I've gained hands-on experience using tools like C, C++, MATLAB, and Verilog. I've also demonstrated strong leadership abilities as Chairman and Vice President of the IEEE TOBB ETÜ Student Branch. My goal is to combine my engineering knowledge with my teamwork and leadership experience to contribute to innovative defense and technology projects.
+      </p>
+    </div>
+
+    <h2>EXPERIENCE</h2>
+    <div class="experience">
+      <div class="exp-item">
+        <div class="exp-date">May 2025 – August 2025</div>
+        <div class="exp-title">Long Term Intern | System & Test Department | Fotoniks A.Ş.</div>
+        <div>
+          I gained valuable experience in test planning and qualification report analysis. I received training in IBM Rational DOORS, where I migrated company projects. I also acquired knowledge of industry standards such as MIL-STD-810H, MIL-STD-461G, and DO-160G. Furthermore, I gained practical insight into the operation of vibration and climate chambers through on-site observation, enhancing my competency in system engineering and test processes.
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">April 2024 – September 2024</div>
+        <div class="exp-title">Chairman | IEEE TOBB ETU Student Branch</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">May 2024 – August 2024</div>
+        <div class="exp-title">Long Term Intern | PulseTRonics</div>
+        <div>
+          I actively participated in software development for Adalm Pluto SDR using Ubuntu and C++. I received training in radar systems and delivered a presentation on Electronic Attack. This experience significantly enhanced my proficiency in software-defined radios, radar systems, and electronic warfare.
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">January 2023 – April 2024</div>
+        <div class="exp-title">Vice President | IEEE TOBB ETU Student Branch</div>
+        <div>
+          I took on the management and coordination of a community, leading community meetings and structural changes. Additionally, I supervised and directed the administrative unit, enhancing operational efficiency. These experiences strengthened my leadership, team management, and organizational development skills.
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">May 2023 – August 2023</div>
+        <div class="exp-title">Long Term Intern | PulseTRonics</div>
+        <div>
+          I have achieved a significant knowledge base through extensive research in the fields of Electronic Warfare (EW) and Radar. I successfully completed the training provided by my company in these areas. I also read books such as EW Fundamentals, EW 101/102/104, and The Radar Game. Furthermore, I delivered presentations on these topics to my superiors and benefited from the experiences of professionals who have worked or are currently working in leading institutions in these fields within our country.
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">January 2022 – January 2023</div>
+        <div class="exp-title">Board Member | IEEE TOBB ETU Student Branch</div>
+        <div>
+          As part of the management team, I helped organize various courses for students. I actively participated in national student workshops. Additionally, our management team arranged meetings bringing together C-level executives and students. These experiences significantly strengthened my event management, communication, and networking skills.
+        </div>
+      </div>
+    </div>
+
+    <h2>EDUCATION</h2>
+    <div class="education">
+      <div class="edu-item">
+        <div class="edu-date">September 2020 – Present</div>
+        <div class="edu-title">Undergraduate Education, Electrical Electronics Engineering, TOBB ETU</div>
+        <ul>
+          <li>I gained admission to the university with a 50% scholarship, based on my university entrance exam ranking of 17244.</li>
+          <li>I completed the preparatory class by scoring 513 on the TOEFL ITP exam.</li>
+          <li>Taken Courses: ELE 562 Satellite Communication System, ELE 563 Communication Network</li>
+          <li>GPA: 2.5</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>PROJECTS</h2>
+    <div class="projects">
+      <ul>
+        <li><a href="project1.html">Autonomous RF Transmitter Localization via Onboard Software-Defined Radio – ELE 495</a></li>
+        <li><a href="project2.html">FPGA-Based UART-Synchronized Calculator with 7-Segment Display Interface – BIL 264</a></li>
+        <li><a href="project3.html">Elevator Control System – ELE 301</a></li>
+        <li><a href="project4.html">C++ - BIL 142</a></li>
+        <li><a href="project5.html">Audio and Video Processing With MATLAB – ELE 371</a></li>
+        <li><a href="project6.html">Fourth Level Butterworth Filter Design – ELE 202</a></li>
+      </ul>
+    </div>
+
+    <h2>SKILLS</h2>
+    <div class="skills">
+      <ul>
+        <li>C</li>
+        <li>MATLAB</li>
+        <li>C++</li>
+        <li>Verilog</li>
+        <li>Spanish (A2)</li>
+      </ul>
+    </div>
+
+    <h2>CERTIFICATIONS</h2>
+    <div class="certifications">
+      <ul>
+        <li>MATLAB Fundamentals - MathWorks</li>
+        <li>MATLAB Onramp – MathWorks</li>
+        <li>C++ - Udemy</li>
+        <li>C Programming – Udemy</li>
+      </ul>
+    </div>
+
+    <h2>CONTACT</h2>
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="mailto:osman.tunc.ee@gmail.com">E-mail</a>
+        </li>
+        <li>
+          <a href="https://github.com/osmantunc" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/osman-tunc/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

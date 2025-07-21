@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects - Osman Tunç</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="contact.html">Contact</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+  <div class="container">
+    <h1>Projects</h1>
+    <ul>
+      <li>
+        <b>
+          <a href="project1.html">Autonomous RF Transmitter Localization via Onboard Software-Defined Radio – ELE 495</a>
+        </b>
+        <p>
+          This project involves the development of an autonomous system for localizing RF transmitters using onboard software-defined radio (SDR) technology.
+        </p>
+      </li>
+      <li>
+        <b>
+          <a href="project2.html">FPGA-Based UART-Synchronized Calculator with 7-Segment Display Interface – BIL 264</a>
+        </b>
+        <p>
+          This project implements a calculator on FPGA, synchronized via UART, and displays results on a 7-segment interface.
+        </p>
+      </li>
+      <li>
+        <b>
+          <a href="project3.html">Elevator Control System – ELE 301</a>
+        </b>
+        <p>
+          A simulation and implementation of an elevator control system, focusing on logic design and safety.
+        </p>
+      </li>
+      <li>
+        <b>
+          <a href="project4.html">C++ - BIL 142</a>
+        </b>
+        <p>
+          Various programming assignments and projects completed using C++ as part of the BIL 142 course.
+        </p>
+      </li>
+      <li>
+        <b>
+          <a href="project5.html">Audio and Video Processing With MATLAB – ELE 371</a>
+        </b>
+        <p>
+          Projects involving audio and video signal processing using MATLAB, including filtering, analysis, and visualization.
+        </p>
+      </li>
+      <li>
+        <b>
+          <a href="project6.html">Fourth Level Butterworth Filter Design – ELE 202</a>
+        </b>
+        <p>
+          Design and analysis of a fourth level Butterworth filter, including theoretical calculations and practical implementation.
+        </p>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
