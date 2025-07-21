@@ -1,81 +1,81 @@
-/* Mühendislik temalı grid arka plan */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   min-height: 100vh;
-  background-color: #e6ecf3;
-  background-image:
-    linear-gradient(90deg, #cfd8dc 1px, transparent 1px),
-    linear-gradient(180deg, #cfd8dc 1px, transparent 1px);
-  background-size: 40px 40px;
+  background: #18191b;
+  color: #f3f3f3;
 }
 
-/* Sayfa kutusu */
 .container {
-  max-width: 850px;
+  max-width: 950px;
   margin: 40px auto 40px auto;
-  background: rgba(255,255,255,0.97);
-  padding: 36px 32px 32px 32px;
-  border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(44,62,80,0.10), 0 1.5px 6px rgba(44,62,80,0.07);
+  background: #232427;
+  padding: 44px 38px 38px 38px;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 6px rgba(0,0,0,0.10);
 }
 
-/* Üst menü */
 .navbar {
   display: flex;
   justify-content: flex-end;
   gap: 36px;
-  background: rgba(255,255,255,0.95);
-  padding: 20px 0 20px 0;
-  border-radius: 0 0 14px 14px;
-  margin-bottom: 32px;
-  box-shadow: 0 2px 8px rgba(44,62,80,0.04);
+  background: #232427;
+  padding: 22px 0 22px 0;
+  border-radius: 0 0 18px 18px;
+  margin-bottom: 36px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   position: sticky;
   top: 0;
   z-index: 10;
 }
 .navbar a {
-  color: #1565c0;
+  color: #f3f3f3;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.13em;
   letter-spacing: 0.5px;
-  transition: color 0.2s;
-  padding: 2px 8px;
-  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+  padding: 6px 14px;
+  border-radius: 8px;
 }
 .navbar a:hover, .navbar a:focus {
-  color: #fff;
-  background: #1565c0;
+  color: #ff5e2f;
+  background: #18191b;
   text-decoration: none;
 }
 
-/* Başlıklar */
 h1 {
-  color: #1565c0;
-  font-size: 2.2em;
+  color: #fff;
+  font-size: 2.6em;
   margin-bottom: 0.2em;
   letter-spacing: 1px;
+  font-weight: 800;
 }
 h2 {
-  color: #263238;
-  font-size: 1.3em;
+  color: #fff;
+  font-size: 1.4em;
   margin-top: 2.2em;
   margin-bottom: 0.7em;
   letter-spacing: 0.5px;
-  border-left: 4px solid #1565c0;
+  border-left: 4px solid #ff5e2f;
   padding-left: 12px;
-  background: linear-gradient(90deg, #e3f2fd 60%, transparent 100%);
+  background: linear-gradient(90deg, #232427 60%, transparent 100%);
+}
+h3 {
+  color: #ff5e2f;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+  font-weight: 700;
 }
 
-/* Başlık altı iletişim */
 .top-contact {
   margin: 18px 0 32px 0;
   display: flex;
   gap: 32px;
 }
 .top-contact a {
-  color: #1565c0;
+  color: #ff5e2f;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.08em;
@@ -87,10 +87,9 @@ h2 {
 }
 .top-contact a:hover {
   color: #fff;
-  background: #1565c0;
+  background: #ff5e2f;
 }
 
-/* Ana bölümler */
 .about, .experience, .education, .projects, .skills, .certifications, .contact {
   margin-bottom: 32px;
 }
@@ -99,10 +98,10 @@ h2 {
 }
 .exp-title, .edu-title {
   font-weight: bold;
-  color: #263238;
+  color: #fff;
 }
 .exp-date, .edu-date {
-  color: #607d8b;
+  color: #bdbdbd;
   font-size: 0.98em;
   margin-bottom: 2px;
 }
@@ -117,18 +116,77 @@ h2 {
   line-height: 1.6;
 }
 
-/* Proje detay linkleri */
+.projects > ul > li {
+  background: #232427;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  padding: 24px 22px 18px 22px;
+  margin-bottom: 28px;
+  transition: box-shadow 0.2s, background 0.2s;
+  border-left: 5px solid #ff5e2f;
+}
+.projects > ul > li:hover {
+  background: #18191b;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+.projects b {
+  font-size: 1.08em;
+  color: #ff5e2f;
+  font-weight: 700;
+}
+
+.project-images {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.project-images img {
+  max-width: 220px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  background: #18191b;
+}
+.project-images img:hover {
+  box-shadow: 0 4px 16px #ff5e2f44;
+}
+.system-image {
+  display: block;
+  margin: 30px auto 30px auto;
+  max-width: 95%;
+  width: 520px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  background: #18191b;
+}
+.system-image:hover {
+  box-shadow: 0 4px 24px #ff5e2f44;
+}
+.project-video {
+  display: block;
+  margin: 24px auto 0 auto;
+  max-width: 480px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+}
+
 .projects a, .certifications a, .skills a, .contact a {
-  color: #1565c0;
+  color: #ff5e2f;
   text-decoration: none;
   transition: color 0.2s;
 }
 .projects a:hover, .certifications a:hover, .skills a:hover, .contact a:hover {
-  color: #0d47a1;
+  color: #fff;
   text-decoration: underline;
 }
 
-/* İletişim alt listesi */
 .contact ul {
   list-style: none;
   padding-left: 0;
@@ -137,21 +195,27 @@ h2 {
   margin-bottom: 8px;
 }
 
-/* Blog yazı listesi */
 .blog-list {
   list-style: none;
   padding-left: 0;
 }
 .blog-list li {
   margin-bottom: 24px;
-  background: #f5faff;
-  border-left: 4px solid #1565c0;
+  background: #232427;
+  border-left: 4px solid #ff5e2f;
   padding: 12px 18px;
   border-radius: 7px;
 }
 
-/* Responsive (mobil uyumlu) */
-@media (max-width: 600px) {
+code {
+  background: #232427;
+  color: #ff5e2f;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.98em;
+}
+
+@media (max-width: 700px) {
   .container {
     padding: 16px 4vw 16px 4vw;
   }
@@ -170,5 +234,13 @@ h2 {
   h2 {
     font-size: 1.05em;
     padding-left: 7px;
+  }
+  .project-images {
+    flex-direction: column;
+    align-items: center;
+  }
+  .system-image, .project-video {
+    max-width: 98vw;
+    width: 98vw;
   }
 }
