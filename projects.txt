@@ -4,9 +4,60 @@
   <meta charset="UTF-8">
   <title>Projects - Osman Tunç</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .project-images {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .project-images img {
+      max-width: 220px;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+    .project-images img:hover {
+      box-shadow: 0 4px 16px rgba(44,62,80,0.18);
+    }
+    .system-image {
+      display: block;
+      margin: 30px auto 30px auto;
+      max-width: 95%;
+      width: 520px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+    .system-image:hover {
+      box-shadow: 0 4px 24px rgba(44,62,80,0.18);
+    }
+    .project-video {
+      display: block;
+      margin: 24px auto 0 auto;
+      max-width: 480px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+    }
+    @media (max-width: 700px) {
+      .project-images {
+        flex-direction: column;
+        align-items: center;
+      }
+      .system-image, .project-video {
+        max-width: 98vw;
+        width: 98vw;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar">
+    <a href="index.html">Home</a>
     <a href="contact.html">Contact</a>
     <a href="projects.html">Projects</a>
     <a href="blog.html">Blog</a>
@@ -14,50 +65,179 @@
   <div class="container">
     <h1>Projects</h1>
     <ul>
-      <li>
-        <b>
-          <a href="project1.html">Autonomous RF Transmitter Localization via Onboard Software-Defined Radio – ELE 495</a>
-        </b>
+      <li id="rf-sdr">
+        <b>Autonomous RF Transmitter Localization via Onboard Software-Defined Radio – ELE 495</b>
+        <h3>Introduction</h3>
         <p>
-          This project involves the development of an autonomous system for localizing RF transmitters using onboard software-defined radio (SDR) technology.
+          In the Spring semester of the 2024–2025 academic year at TOBB University of Economics and Technology, students have been assigned a senior design project titled "An Autonomous Vehicle Navigating Toward an RF Signal."
         </p>
-      </li>
-      <li>
-        <b>
-          <a href="project2.html">FPGA-Based UART-Synchronized Calculator with 7-Segment Display Interface – BIL 264</a>
-        </b>
         <p>
-          This project implements a calculator on FPGA, synchronized via UART, and displays results on a 7-segment interface.
+          The objective of this project is to develop a fully autonomous ground vehicle capable of detecting and following a 433 MHz RF signal emitted by a stationary transmitter. The system will be controlled by a Raspberry Pi 4 and will autonomously determine the direction of signal propagation to navigate toward the source.
         </p>
+        <p>
+          Once the vehicle enters a predefined radius around the transmitter, it will halt movement. To ensure full autonomy, no manual control or intervention will be allowed after the initial signal transmission. Additionally, as the vehicle approaches the target zone, its real-time positional data will be transmitted to the user via a dedicated web-based interface.
+        </p>
+        <p>
+          The primary goal is for the vehicle to successfully reach the designated radius within a given time frame, demonstrating efficient signal tracking, mobility, and autonomous decision-making.
+        </p>
+
+        <h3>Features</h3>
+        <ul>
+          <li><b>Hardware:</b> Raspberry Pi 4</li>
+          <li>Raspberry Pi OS (Linux)</li>
+          <li>RTL SDR</li>
+          <li><b>Features of main components:</b>
+            <ul>
+              <li>Motors and casters: for movement</li>
+              <li>MPU6050: The vehicle performs rotations in predefined angular increments</li>
+              <li>L298N Motor driver: To enable precise control of the motors integrated into the vehicle platform</li>
+              <li>Powerbank and 18650 rechargeable battery: To provide power to all onboard components</li>
+              <li>microSD: Memory of the Raspberry Pi 4</li>
+              <li>Yagi antenna: To capture the signal with directional sensitivity</li>
+            </ul>
+          </li>
+        </ul>
+        <a href="system.PNG" target="_blank">
+          <img src="system.PNG" alt="System Diagram" class="system-image">
+        </a>
+
+        <h3>Installation</h3>
+        <p>Libraries used in the project:</p>
+        <ul>
+          <li>GPIO: For the input and output connections of the motor pins</li>
+          <li>rtlsdr: Configuration of RTL SDR</li>
+          <li>numpy: For mathematical operations</li>
+          <li>SMBus: Configuration of the MPU6050 gyro module</li>
+          <li>matplotlib: Draw the spectrum</li>
+          <li>tkinter: For GUI interface</li>
+          <li>threading: For communication between interface elements</li>
+          <li>Raspberry: A 32 GB microSD card is used to provide storage for the Raspberry Pi</li>
+        </ul>
+
+        <h3>Usage</h3>
+        <ol>
+          <li>Ensure hardware connections are properly set: Raspberry Pi 4, RTL-SDR USB dongle, MPU6050 gyroscope sensor, Motor driver (connected to GPIO pins)</li>
+          <li>Insert a 32 GB microSD card with the Raspberry Pi OS installed.</li>
+          <li>Upload the project files to the Raspberry Pi, including: The Python main script (jiroskop.py or equivalent) and any additional dependencies.</li>
+          <li>Install required libraries if not already installed:<br>
+            <code>pip install numpy matplotlib rtlsdr smbus2 RPi.GPIO</code>
+          </li>
+          <li>Run the main Python script:<br>
+            <code>python3 jiroskop.py</code>
+          </li>
+          <li>Use the GUI application that appears on your screen:
+            <ul>
+              <li>Click START to begin directional signal scanning</li>
+              <li>The vehicle will rotate in steps of 30°, analyze signal strength, and move toward the strongest signal</li>
+              <li>If the received signal reaches the predefined threshold, the vehicle will stop automatically</li>
+            </ul>
+          </li>
+          <li>Real-time spectrum analysis and system messages will be displayed using matplotlib.</li>
+          <li>Click the STOP button to terminate the operation manually. If the threshold value is reached before clicking the STOP button, the vehicle will stop automatically.</li>
+        </ol>
+
+        <h3>Screenshots</h3>
+        <p>Some images from project:</p>
+        <div class="project-images">
+          <a href="arayuz.jpg" target="_blank">
+            <img src="arayuz.jpg" alt="Interface Screenshot">
+          </a>
+          <a href="araba1.jpg" target="_blank">
+            <img src="araba1.jpg" alt="Car 1">
+          </a>
+          <a href="araba2.jpg" target="_blank">
+            <img src="araba2.jpg" alt="Car 2">
+          </a>
+        </div>
+
+        <h3>Direction Finding Examples:</h3>
+        <p>Example Demo</p>
+        <video class="project-video" controls>
+          <source src="demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <!-- Eğer YouTube videosu da eklemek istersen:
+        <br><br>
+        <iframe class="project-video" width="480" height="270" src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID" 
+                frameborder="0" allowfullscreen></iframe>
+        -->
       </li>
-      <li>
-        <b>
-          <a href="project3.html">Elevator Control System – ELE 301</a>
-        </b>
+      <li id="fpga-calc">
+  <b>FPGA-Based UART-Synchronized Calculator with 7-Segment Display Interface – BIL 264</b>
+  <h3>Project Description</h3>
+  <p>
+    In this project, you are required to design a calculator that performs basic operations (addition, subtraction, multiplication, division) with the following constraints:
+  </p>
+  <ul>
+    <li>Input numbers and results must be displayed both on the 7-segment display and via UART on a terminal.</li>
+    <li>For all operations, the numbers are two digits ("00" - "99"). When set, two digits of the 7-segment display show one number, and the other two digits show the other number.</li>
+    <li>The result is four digits ("0000" - "9999") and must be shown on the 7-segment display. If the result exceeds the displayable range, the boundary values "0000" or "9999" are shown.</li>
+    <li>Two buttons are used to increase/decrease one number, and two other buttons for the other number. If the operation requires only one operand, two buttons are sufficient. The numbers being set are always visible on the 7-segment display.</li>
+    <li>Switches are used to select the operation (+, -, *, /). The selected operation is indicated by LEDs.</li>
+    <li>Pressing a button calculates the result and displays it on the 7-segment display.</li>
+    <li>One switch acts as a reset to return the circuit to its initial state.</li>
+    <li>Numbers and operations can also be set and calculated via UART protocol, and results must be visible on UART as well.</li>
+    <li>For UART input, you can enter a string like "78+13" from the PC keyboard connected to the FPGA. After pressing Enter, the result "0091" should be displayed both on the UART terminal and the 7-segment display. All operations must be synchronized between UART and the FPGA hardware (e.g., if addition is selected, LEDs and displays must reflect this).</li>
+    <li>You may define your own input/output formats for UART, LEDs, and 7-segment display, as long as they are consistent (e.g., "T7813" instead of "78+13").</li>
+    <li>In case of errors (e.g., division by zero), "error" must be displayed on both the 7-segment display and UART terminal.</li>
+    <li>You can set the UART baud rate as desired.</li>
+  </ul>
+</li>
+      </li>
+      <li id="elevator">
+        <b>Elevator Control System – ELE 301</b>
         <p>
           A simulation and implementation of an elevator control system, focusing on logic design and safety.
         </p>
       </li>
-      <li>
-        <b>
-          <a href="project4.html">C++ - BIL 142</a>
-        </b>
-        <p>
-          Various programming assignments and projects completed using C++ as part of the BIL 142 course.
-        </p>
-      </li>
-      <li>
-        <b>
-          <a href="project5.html">Audio and Video Processing With MATLAB – ELE 371</a>
-        </b>
-        <p>
-          Projects involving audio and video signal processing using MATLAB, including filtering, analysis, and visualization.
-        </p>
-      </li>
-      <li>
-        <b>
-          <a href="project6.html">Fourth Level Butterworth Filter Design – ELE 202</a>
-        </b>
+      <li id="cpp">
+  <b>C++ - BIL 142</b>
+  <h3>Project Description</h3>
+  <p>
+    Imagine you are a ship captain embarking on a journey in a universe governed by probabilities. You are both the captain and the designer of this universe. The following criteria, listed from most to least important, will determine your project score:
+  </p>
+  <ul>
+    <li>Your code must compile and run successfully. If you use CMake, your CMakeLists.txt should work; if you use gcc, provide the exact command in a README file.</li>
+    <li>The required business logic must be implemented correctly.</li>
+    <li>Write clean code: avoid magic numbers, use const correctness, and ensure proper naming for variables, classes, and functions.</li>
+    <li>Utilize as many topics covered in class as possible.</li>
+    <li>There should be no memory leaks or undefined behavior.</li>
+    <li>Your design should be as flexible as possible. For example, if the number of events increases or new ships are added, the structure should allow for easy extension without deleting existing code.</li>
+  </ul>
+  <h4>Game Flow</h4>
+  <ul>
+    <li>At the start, the player (captain) selects one ship. Each ship has three attributes: Fuel, Health, and Money. The game starts with Money: 0, Fuel: 100, Health: 100.</li>
+    <li>Each ship type has unique features:
+      <ul>
+        <li><b>Fast Ship:</b> 1.5x higher escape chance than the normal ship, but takes 1.5x more damage.</li>
+        <li><b>Strong Ship:</b> 0.5x damage taken compared to the normal ship, but escape chance is half that of the normal ship.</li>
+        <li><b>Normal Ship:</b> Balanced escape chance and damage.</li>
+      </ul>
+    </li>
+    <li>There are 3 different events, each called randomly 5 times:
+      <ul>
+        <li><b>Asteroid Belt:</b> For 3 rounds, the ship may or may not take 10 damage depending on its type.</li>
+        <li><b>Abandoned Planet:</b> 50% chance to gain 10 gold or encounter Space Pirates.</li>
+        <li><b>Space Pirates:</b> The captain chooses to Escape, Fight, or Negotiate.
+          <ul>
+            <li>If Escape is chosen, the chance of success depends on the ship type. If unsuccessful, the same options are presented again. Escaping costs 33 fuel. If there isn't enough fuel, escape is not possible.</li>
+            <li>If Fight is chosen, there is a 50% chance to win or lose. Losing results in 30 damage for a normal ship.</li>
+            <li>If Negotiate is chosen, pirates demand a random fee of 10, 20, or 30 gold.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>After each event, check if fuel is zero. If so, the game ends.</li>
+    <li>At the end of the game (when fuel is zero or after 5 events), the final score is calculated as follows:<br>
+      <code>Score = (Fuel) x 5 + (Ship Health) x 10 + (Money) x 10</code>
+    </li>
+  </ul>
+  <p>
+    All numbers and operations should be handled cleanly, and the game should be easily extendable for new events or ship types.
+  </p>
+</li>
+      <li id="butterworth">
+        <b>Fourth Level Butterworth Filter Design – ELE 202</b>
         <p>
           Design and analysis of a fourth level Butterworth filter, including theoretical calculations and practical implementation.
         </p>
